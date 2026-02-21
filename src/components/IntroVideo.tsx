@@ -44,7 +44,7 @@ const IntroVideo = ({ onFinished }: IntroVideoProps) => {
         {playing && (
         <button
           onClick={onFinished}
-          className="absolute bottom-8 right-8 rounded-lg border border-primary/40 bg-background/80 px-6 py-2 text-sm text-muted-foreground backdrop-blur-sm transition-colors hover:text-foreground z-50"
+          className="absolute top-4 right-4 sm:top-8 sm:right-8 rounded-lg border border-primary/40 bg-background/80 px-6 py-2 text-sm text-muted-foreground backdrop-blur-sm transition-colors hover:text-foreground z-50"
           style={{ fontFamily: "var(--font-body)" }}
         >
         Pular Introdução
