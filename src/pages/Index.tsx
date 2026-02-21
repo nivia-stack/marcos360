@@ -60,37 +60,26 @@ const Index = () => {
     }
   }, [queue, goHome]);
 
-  const renderCurrentScreen = () => {
-    if (screen === "intro") {
-      return <IntroVideo onFinished={goHome} />;
-    }
+  const renderCurrentScreen = () => {}
+  if (screen === "intro") {
+    return <IntroVideo onFinished={goHome} />;
+  }
 
-    if (screen === "playing" && currentId && VIDEO_MAP[currentId]) {
-      const video = VIDEO_MAP[currentId];
+  if (screen === "playing" && currentId && VIDEO_MAP[currentId]) {
+    const video = VIDEO_MAP[currentId];
     
-      return (
-        <VideoPlayer
-          key={currentId}
-          src={video.src}
-          title={video.title}
-          onFinished={handleVideoFinished}
-          onStop={goHome}
-        />
-      );
-    }
+    return (
+      <VideoPlayer
+        key={currentId}
+        src={video.src}
+        title={video.title}
+        onFinished={handleVideoFinished}
+        onStop={goHome}
+      />
+    );
+  }
 
-    return <HomeScreen onSelect={handleSelect} />;
-  };
-
-  return (
-    <div className="min-h-screen w-full">
-      {/* O alerta fica aqui. No CSS ele tem portrait:flex e sm:hidden */}
-      <RotationAlert /> 
-
-      {/* A tela atual renderiza aqui em baixo */}
-      {renderCurrentScreen()}
-    </div>
-  );
+  return <HomeScreen onSelect={handleSelect} />;
 };
 
 export default Index;
